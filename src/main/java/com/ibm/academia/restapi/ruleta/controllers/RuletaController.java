@@ -3,6 +3,8 @@ package com.ibm.academia.restapi.ruleta.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +27,7 @@ import com.ibm.academia.restapi.ruleta.services.RuletaService;
 @RequestMapping("/ruletas")
 public class RuletaController {
 	
-	
+	Logger logger = LoggerFactory.getLogger(RuletaController.class);
 	
 	@Autowired
 	private RuletaService ruletaService;
