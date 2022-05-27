@@ -6,6 +6,7 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ibm.academia.restapi.ruleta.models.entities.Apuesta;
 import com.ibm.academia.restapi.ruleta.models.entities.Ruleta;
@@ -102,6 +103,7 @@ public class RuletaServiceImpl implements RuletaService{
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<Ruleta> buscarTodos() {
 		List<Ruleta> ruletas = (List<Ruleta>) ruletaRepository.findAll();
 		if(ruletas.isEmpty()) {
